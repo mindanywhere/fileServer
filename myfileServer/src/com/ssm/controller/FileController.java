@@ -37,11 +37,11 @@ public class FileController  {
 		fileName=fileName.substring(fileName.lastIndexOf("/")+1);
 		System.out.println("上传文件的文件名："+fileName);
 		
-		file.getContentType();
+		// file.getContentType();没有必须的用处
 		// 目标文件
 		File dest = new File(fileName);
 		try {
-			// 保存文件
+			// 保存文件，文件名保持原始的名字
 			file.transferTo(dest);
 			mv.addObject("success", true);
 			mv.addObject("msg", "上传文件成功");
